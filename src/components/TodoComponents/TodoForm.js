@@ -8,7 +8,13 @@ const ToDoForm = props => {
                 value={props.newItem}
                 onChange={props.handleChanges}
                 />
+                
                 <button>Add</button>
+
+                <button className="clear-btn" onClick={props.removeTodo}>
+                Clear Completed
+                </button>
+            
         </form>
     );
 };

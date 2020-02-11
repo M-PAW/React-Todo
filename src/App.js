@@ -19,9 +19,12 @@ class App extends React.Component {
       newItem: ''
     }
   }
-// clearCompleted
-props.clearCompleted
 
+  // removeTodo(Todo){
+  //   this.setState({
+  //     toDo: this.state.toDo.filter(item => item.completed !== true)
+  //   })
+  // }
 
   toggleItem = clickedId => {
     const newToDo = this.state.toDoList.map( item => {
@@ -73,6 +76,7 @@ props.clearCompleted
         addNewItem={this.addNewItem} 
         handleChanges={this.handleChanges}
         handleSubmit={this.handleSubmit}
+        removeTodo={this.removeTodo}
         />
         </div>
         <ToDoList
