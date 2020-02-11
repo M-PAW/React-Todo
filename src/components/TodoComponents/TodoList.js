@@ -6,6 +6,7 @@ import Item from './Todo';
 
 
 const ToDoList = props => {
+    const {deleteItems} = props;
     return (
         <div className="todo-list">
             {props.toDo.map( item => (

@@ -1,4 +1,7 @@
 import React from 'react';
+
+
+
 const ToDoForm = props => {
     return (
         <form onSubmit={props.handleSubmit}>
@@ -11,7 +14,7 @@ const ToDoForm = props => {
                 
                 <button>Add</button>
 
-                <button className="clear-btn" onClick={props.removeTodo}>
+                <button className="clear-btn" onClick={props.deleteTodo}>
                 Clear Completed
                 </button>
             

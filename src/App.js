@@ -3,14 +3,15 @@ import ToDoForm from './components/TodoComponents/TodoForm';
 import ToDoList from './components/TodoComponents/TodoList';
 import './components/TodoComponents/Todo.css';
 
-
+// you will need a place to store your state in this component.
 const toDo = [
 
 ];
 
+// design `App` to be the parent component of your application.
 class App extends React.Component {
-  // you will need a place to store your state in this component.
-  // design `App` to be the parent component of your application.
+  
+  
   // this component is going to take care of state, and any change handlers you need to work with your state
   constructor() {
     super();
@@ -18,13 +19,8 @@ class App extends React.Component {
       toDoList: toDo,
       newItem: ''
     }
-  }
-
-  // removeTodo(Todo){
-  //   this.setState({
-  //     toDo: this.state.toDo.filter(item => item.completed !== true)
-  //   })
-  // }
+  }    
+  
 
   toggleItem = clickedId => {
     const newToDo = this.state.toDoList.map( item => {
@@ -43,6 +39,19 @@ class App extends React.Component {
     });
   }
 
+  // Remove completed
+  removeTodo = () => {
+    const newToDo = this.state.toDoList.filter( item => 
+      item.completed < 1
+    )
+
+    this.setState({
+      toDoList: newToDo
+    })
+
+  }
+
+    // Adds new object to the array
     addNewItem = itemText => {
       const newItem = {
         task: itemText,
@@ -76,7 +85,7 @@ class App extends React.Component {
         addNewItem={this.addNewItem} 
         handleChanges={this.handleChanges}
         handleSubmit={this.handleSubmit}
-        removeTodo={this.removeTodo}
+        deleteTodo={this.removeTodo}
         />
         </div>
         <ToDoList
